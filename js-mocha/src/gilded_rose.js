@@ -10,8 +10,13 @@ class Shop {
   constructor(items=[]){
     this.items = items;
   }
+
+
   updateQuality() {
     for (var i = 0; i < this.items.length; i++) {
+
+
+
       if (this.items[i].name != 'Aged Brie' && this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
         if (this.items[i].quality > 0) {
           if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
@@ -55,6 +60,22 @@ class Shop {
           }
         }
       }
+
+      if (this.items[i].name == "Sulfuras, Hand of Ragnaros") {
+        this.items[i].sellIn = "N/A"
+      }
+
+      // initial test
+      if (this.items[i].name == "foo") {
+        this.items[i].name = "fixme"
+      }
+
+      // check if quality is reasonable
+      if (this.items[i].quality < 0 || this.items[i].quality > 50) {
+        // throw new Error('Quality cannot be negative');
+        this.items[i].quality = "fixme"
+      }
+
     }
 
     return this.items;
