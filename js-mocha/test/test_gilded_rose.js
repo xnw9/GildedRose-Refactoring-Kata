@@ -32,7 +32,7 @@ describe("Gilded Rose", function () {
         const items = gildedRose.updateQuality();
         expect(items[0].quality).to.equal(0);
     })
-    // what happens if it is gonna be negative after this update? keep it as it is?
+    // for now, assume it will be reduced to 0
 
     it("quality cannot be more than 50 - sth", () => {
         const gildedRose = new Shop([new Item('sth', 1, 60)]);
@@ -88,7 +88,7 @@ describe("Gilded Rose", function () {
         const items = gildedRose.updateQuality();
         expect(items[0].quality).to.equal(12);
     })
-    // is it what we want? not mentioned in document
+    // Is this what we want? not mentioned in document
 
     it("normal items' quality decreases twice as fast after sell by date", () => {
         const gildedRose = new Shop([new Item('sth', 0, 10)]);
