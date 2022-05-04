@@ -6,6 +6,8 @@ class Item {
     }
 }
 
+// TODO: avoid mutation?
+
 class Shop {
     constructor(items = []) {
         this.items = items;
